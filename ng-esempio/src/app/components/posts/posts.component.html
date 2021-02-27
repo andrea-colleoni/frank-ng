@@ -1,0 +1,4 @@
+<p><button (click)="toggle()">Clicca</button></p>
+<ul *ngIf="vediPosts">
+    <li *ngFor="let p of posts | async">{{p.title}}</li>
+</ul>
