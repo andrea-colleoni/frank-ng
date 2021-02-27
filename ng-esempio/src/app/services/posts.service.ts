@@ -16,4 +16,10 @@ export class PostsService {
     console.log('prima servizio');
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
+
+  post(id: number): Observable<Post> {
+    console.log('prima servizio');
+    // ` => ALT + 96
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  }
 }

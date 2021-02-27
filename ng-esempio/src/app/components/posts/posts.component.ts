@@ -11,6 +11,7 @@ import { PostsService } from 'src/app/services/posts.service';
 export class PostsComponent implements OnInit {
 
   posts: Observable<Post[]>;
+  post: Post;
   vediPosts = false;
 
   constructor(
@@ -21,6 +22,10 @@ export class PostsComponent implements OnInit {
     console.log('prima');
     this.posts = this.ps.posts();
     console.log('dopo');
+  }
+
+  apriPost(id: number) {
+    this.ps.post(id).subscribe(post => this.post = post);
   }
 
   toggle() {
